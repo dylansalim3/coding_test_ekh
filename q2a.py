@@ -75,12 +75,14 @@ def HuffmanEncoding(the_data):
 def main(lines):
     huffmanMap = HuffmanEncoding(lines)
 
+    result = '';
     for x in range(0, 10):
         if str(x) in huffmanMap:
             value = huffmanMap[str(x)] if len(huffmanMap[str(x).strip()]) > 0 else "0"
-            sys.stdout = (str(x) + " " + value + "\n")
+            result = (str(x) + " " + value + "\n")
         else:
-            sys.stdout = (str(x) + " null" + "\n")
+            result = (str(x) + " null" + "\n")
+    sys.stdout = result
 
 
 # the_data = "AAAAAAABBCCCCCCDDDEEEEEEEEE"
