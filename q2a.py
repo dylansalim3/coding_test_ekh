@@ -75,7 +75,7 @@ def HuffmanEncoding(the_data):
 def main(lines):
     huffmanMap = HuffmanEncoding(lines)
 
-    result = '';
+    result = ''
     for x in range(0, 10):
         if str(x) in huffmanMap:
             value = huffmanMap[str(x)] if len(huffmanMap[str(x).strip()]) > 0 else "0"
