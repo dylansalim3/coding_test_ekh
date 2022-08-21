@@ -14,7 +14,13 @@ def bfs(maze, start, maxX, maxY):
         path = queue.popleft()
         x, y = path
         if maze[y][x] == goal:
-            counter = 3
+            if y - start[0] > 1:
+                counter = maxY + maxX - start[1] + 1
+            elif x - start[1] > 1:
+                counter = maxX + maxY - start[0] + 1
+            else:
+                counter = -1
+
         for x2, y2 in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):  # directions
             if (0 <= x2 < width and  # X-axis in range
                     0 <= y2 < height and  # y-axis
@@ -61,9 +67,9 @@ def main(lines):
             for j, g in enumerate(innerList):
                 innerLine.append(g)
                 if g == "H":
-                    start = (i, v)
+                    start = (i-1, j)
             mat.append(innerLine)
-    ans = 0 if mat[0][0] == 0 else bfs(mat, (0, 0), maxX,
+    ans = 0 if mat[0][0] == 0 else bfs(mat, start, maxX,
                                        maxY)  # check if start(0,0) is walkable or not if not return False else Run BFS
     print(ans)  # if path exist it will print True else prints False
 
