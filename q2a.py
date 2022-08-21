@@ -78,9 +78,9 @@ def main(lines):
     for x in range(0, 10):
         if str(x) in huffmanMap:
             value = huffmanMap[str(x)] if len(huffmanMap[str(x).strip()]) > 0 else "0"
-            sys.stdout.write(str(x) + " " + value + "\n")
+            sys.stdout = (str(x) + " " + value + "\n")
         else:
-            sys.stdout.write(str(x) + " null" + "\n")
+            sys.stdout = (str(x) + " null" + "\n")
 
 
 # the_data = "AAAAAAABBCCCCCCDDDEEEEEEEEE"
