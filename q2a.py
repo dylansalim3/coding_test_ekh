@@ -1,4 +1,7 @@
 # Node of a Huffman Tree
+import sys
+
+
 class Nodes:
     def __init__(self, probability, symbol, left=None, right=None):
         # probability of the symbol
@@ -75,9 +78,9 @@ def main(lines):
     for x in range(0, 10):
         if str(x) in huffmanMap:
             value = huffmanMap[str(x)] if len(huffmanMap[str(x).strip()]) > 0 else "0"
-            print(str(x) + " " + value)
+            sys.stdout.write(str(x) + " " + value + "\n")
         else:
-            print(str(x) + " null")
+            sys.stdout.write(str(x) + " null" + "\n")
 
 
 # the_data = "AAAAAAABBCCCCCCDDDEEEEEEEEE"
