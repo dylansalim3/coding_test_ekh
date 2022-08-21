@@ -76,13 +76,18 @@ def main(lines):
     huffmanMap = HuffmanEncoding(lines)
 
     result = ''
+    i = 0
     for x in range(0, 10):
         if str(x) in huffmanMap:
             value = huffmanMap[str(x)] if len(huffmanMap[str(x).strip()]) > 0 else "0"
-            result = (str(x) + " " + value + "\n")
+            result += (str(x) + " " + value)
         else:
-            result = (str(x) + " null" + "\n")
-    sys.stdout = result
+            result += (str(x) + " null")
+        if i != 9:
+            result += "\n"
+        i += 1
+    print(result)
+
 
 
 # the_data = "AAAAAAABBCCCCCCDDDEEEEEEEEE"
