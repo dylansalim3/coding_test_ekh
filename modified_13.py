@@ -15,9 +15,9 @@ def bfs(maze, start, maxX, maxY):
         x, y = path
         if maze[y][x] == goal:
             if y - start[0] > 1:
-                counter = maxY + maxX - start[0] + 1
+                counter = maxY + maxX - start[0] - 2
             elif x - start[1] > 1:
-                counter = maxX + maxY - start[1] + 1
+                counter = maxX + maxY - start[1] - 2
             else:
                 counter = -1
 
